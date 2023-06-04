@@ -8,11 +8,24 @@ module TaskWarrior
         self.id = task.uuid
         self.attributes = {
           :label => task.description,
-          :tooltip => "Status: #{task.status}"
+          :fontcolor => $fg,
+          :fontname => $fontname,
+          :color => $nodebg,
+          :shape => 'rectangle',
+          :fillcolor => $nodebg,
+          :style => 'filled, rounded',
         }
 
+        if task.id == Integer($selected_taskid)
+          self.attributes.merge!({
+            :fontcolor => $selfg,
+            :color => $selfg,
+            :fillcolor => $selbg,
+          })
+        end
+
         if :completed == task.status
-          self.attributes.merge!({:fontcolor => 'gray', :color => 'gray'})
+          self.attributes.merge!({:fontcolor => $green, :color => $green})
         end
       end
     end

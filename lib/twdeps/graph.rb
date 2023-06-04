@@ -88,7 +88,10 @@ module TaskWarrior
           @edges << edge
 
           # We present the edges in the sense of "nodeB depends on nodeA"
-          @graph.add_edges(nodeA, nodeB, :dir => 'back', :tooltip => "#{nodeB['label']} depends on #{nodeA['label']}")
+          @graph.add_edges(nodeA, nodeB,
+                           :dir => 'back',
+                           :tooltip => "#{nodeB['label']} depends on #{nodeA['label']}",
+                           :color => $fg)
         end
       end
 
