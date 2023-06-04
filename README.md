@@ -8,6 +8,6 @@ Original:
 ![party](https://raw.github.com/nerab/twdeps/master/examples/party.png)
 
 Spiced up:
-![party](./party.png)
+![party](https://raw.github.com/garado/twdeps/master/party.png)
 ![mountain](./goals-mountain.svg)
 ![nord](./goals-nord.svg)
