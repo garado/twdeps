@@ -28,16 +28,18 @@ Usage:
 where [options] are:
 
 EOS
-  opt :format, "Specify output format", :default => 'svg'
-  opt :title,  "Specify title", :default => 'Roadmap'
-  opt :trace,  "Enable trace output", :default => false
-  opt :taskid, "ID of *special* task", :default => -1
-  opt :fg,     "Fg color", :default => "#eceff4"
-  opt :bg,     "Bg color", :default => "#2e3440" 
-  opt :nodebg, "Node bg color", :default => "#3b4252" 
-  opt :selbg,  "Selected node bg color", :default => "#81a1c1" 
-  opt :selfg,  "Selected node fg color", :default => "#5e81ac" 
-  opt :green,  "Completed", :default => "#a3be8c"
+  opt :format,  "Specify output format", :default => 'svg'
+  opt :title,   "Specify title", :default => 'Roadmap'
+  opt :trace,   "Enable trace output", :default => false
+  opt :taskid,  "ID of *special* task", :default => -1
+  opt :fg,      "Fg color", :default => "#eceff4"
+  opt :sbfg,    "Subtitle fg color", :default => "#d8dee9"
+  opt :bg,      "Bg color", :default => "#2e3440" 
+  opt :nodebg,  "Node bg color", :default => "#3b4252" 
+  opt :selbg,   "Selected node bg color", :default => "#81a1c1" 
+  opt :selfg,   "Selected node fg color", :default => "#5e81ac" 
+  opt :selsbfg, "Selected node subtitle fg color", :default => "#5e81ac"
+  opt :green,   "Completed", :default => "#a3be8c"
   opt :fontname, "Font name", :default => "CircularStd"
 end
 
@@ -45,10 +47,12 @@ Optimist::die :format, "must be one of #{Graph.formats.join(', ')}" unless Graph
 
 begin
   $fg = opts[:fg]
+  $sbfg = opts[:sbfg]
   $bg = opts[:bg]
   $nodebg = opts[:nodebg]
   $selbg  = opts[:selbg]
   $selfg  = opts[:selfg]
+  $selsbfg  = opts[:selsbfg]
   $green  = opts[:green]
   $fontname = opts[:fontname]
   $selected_taskid = opts[:taskid]
